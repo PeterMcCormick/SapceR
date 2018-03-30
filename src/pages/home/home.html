@@ -9,33 +9,23 @@
   </ion-navbar>
 </ion-header>
 <ion-content>
-  <ion-menu [content]="content">
-    <ion-header>
-      <ion-toolbar>
-        <ion-title>Menu</ion-title>
-      </ion-toolbar>
-    </ion-header>
-    <ion-content>
-      <ion-list>
-        <button ion-item (click)="openPage(homePage)">
-          Picture of the Day
-        </button>
-        <button ion-item (click)="openPage(friendsPage)">
-          Launch Tracker
-        </button>
-        <button ion-item (click)="openPage(eventsPage)">
-          ISS Tracker
-        </button>
-        <button ion-item (click)="openPage(whosInSpace)">
-          Who's in Space?
-        </button>
-      </ion-list>
-      <ion-img style="width: 80px; height: 80px;" src="../assets/imgs/Horsehead">
-      </ion-img>
-    </ion-content>
-  </ion-menu>
+  <!-- Add if blocks for actual picture of the day when it is created -->
 
-  <ion-nav id="nav" #content [root]="rootPage"></ion-nav>
+  <img src={{defaultImage.location}}>
 
+  <div padding>
+    <p>
+      <b>
+        {{defaultImage.title}}
+      </b>
+    </p>
+    <p>
+      {{defaultImage.explanation}}
+    </p>
+    <p>
+      <b>Copyright</b> <br>
+      {{defaultImage.copyright}}
+    </p>
+  </div>
 </ion-content>
 

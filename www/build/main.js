@@ -55,16 +55,57 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var HomePage = /** @class */ (function () {
     function HomePage(navCtrl) {
         this.navCtrl = navCtrl;
+        this.defaultImage = new Picture("Steve Mazlin, Mark Hanson, Warren Keller, Rex Parker, Tommy Tse, \n" +
+            "and Peter Proulx (SSRO / PROMPT / CTIO)", "Carved by a bright young star in Orion's dusty molecular clouds, NGC 2023 is often overlooked in favor of the nearby dramatic silhouette of the Horsehead Nebula. In its own right it is seen as a beautiful star forming emission and reflection nebula though, a mere 1500 light-years distant. Surprisingly colorful and complex filaments are detailed in this rare NGC 2023 portrait. Scattered points of emission are also from the region's Herbig-Haro objects, associated with the energetic jets from newborn stars. The sharp telescopic view spans about 10 light-years at the estimated distance of NGC 2023. Off the right edge of the frame lies the more familiar cosmic Horsehead.", "NGC 2023 in the Horsehead's Shadow", "assets/imgs/Horsehead.jpg");
+        // Add picture of the day call
     }
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"/Users/anthonyjordan/Dev/SpaceR/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>\n      Picture of the Day\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content>\n  <ion-menu [content]="content">\n    <ion-header>\n      <ion-toolbar>\n        <ion-title>Menu</ion-title>\n      </ion-toolbar>\n    </ion-header>\n    <ion-content>\n      <ion-list>\n        <button ion-item (click)="openPage(homePage)">\n          Picture of the Day\n        </button>\n        <button ion-item (click)="openPage(friendsPage)">\n          Launch Tracker\n        </button>\n        <button ion-item (click)="openPage(eventsPage)">\n          ISS Tracker\n        </button>\n        <button ion-item (click)="openPage(whosInSpace)">\n          Who\'s in Space?\n        </button>\n      </ion-list>\n      <ion-img style="width: 80px; height: 80px;" src="../assets/imgs/Horsehead">\n      </ion-img>\n    </ion-content>\n  </ion-menu>\n\n  <ion-nav id="nav" #content [root]="rootPage"></ion-nav>\n\n</ion-content>\n\n'/*ion-inline-end:"/Users/anthonyjordan/Dev/SpaceR/src/pages/home/home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"/Users/anthonyjordan/Dev/SpaceR/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>\n      Picture of the Day\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content>\n  <!-- Add if blocks for actual picture of the day when it is created -->\n\n  <img src={{defaultImage.location}}>\n\n  <div padding>\n    <p>\n      <b>\n        {{defaultImage.title}}\n      </b>\n    </p>\n    <p>\n      {{defaultImage.explanation}}\n    </p>\n    <p>\n      <b>Copyright</b> <br>\n      {{defaultImage.copyright}}\n    </p>\n  </div>\n</ion-content>\n\n'/*ion-inline-end:"/Users/anthonyjordan/Dev/SpaceR/src/pages/home/home.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]) === "function" && _a || Object])
     ], HomePage);
     return HomePage;
+    var _a;
 }());
 
+var Picture = /** @class */ (function () {
+    function Picture(_copyright, _explanation, _title, _location) {
+        this._copyright = _copyright;
+        this._explanation = _explanation;
+        this._title = _title;
+        this._location = _location;
+    }
+    Object.defineProperty(Picture.prototype, "copyright", {
+        get: function () {
+            return this._copyright;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Picture.prototype, "explanation", {
+        get: function () {
+            return this._explanation;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Picture.prototype, "title", {
+        get: function () {
+            return this._title;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Picture.prototype, "location", {
+        get: function () {
+            return this._location;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    return Picture;
+}());
 //# sourceMappingURL=home.js.map
 
 /***/ }),
@@ -168,20 +209,33 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var MyApp = /** @class */ (function () {
     function MyApp(platform, statusBar, splashScreen) {
+        var _this = this;
         this.rootPage = __WEBPACK_IMPORTED_MODULE_4__pages_home_home__["a" /* HomePage */];
         platform.ready().then(function () {
             // Okay, so the platform is ready and our plugins are available.
             // Here you can do any higher level native things you might need.
             statusBar.styleDefault();
             splashScreen.hide();
+            _this.pages = [
+                { title: "Picture of the Day", component: __WEBPACK_IMPORTED_MODULE_4__pages_home_home__["a" /* HomePage */] },
+                { title: "Another Page", component: "" }
+            ];
         });
     }
+    MyApp.prototype.openPage = function (page) {
+        this.nav.setRoot(page.component);
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Nav */]),
+        __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Nav */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Nav */]) === "function" && _a || Object)
+    ], MyApp.prototype, "nav", void 0);
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/anthonyjordan/Dev/SpaceR/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/Users/anthonyjordan/Dev/SpaceR/src/app/app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/anthonyjordan/Dev/SpaceR/src/app/app.html"*/'<ion-menu [content]="content">\n  <ion-header>\n    <ion-toolbar>\n      <ion-title>Menu</ion-title>\n    </ion-toolbar>\n  </ion-header>\n  <ion-content>\n    <ion-list>\n      <button menuClose *ngFor="let page of pages" ion-item (click)="openPage(page)">\n        {{page.title}}\n      </button>\n    </ion-list>\n  </ion-content>\n</ion-menu>\n\n<ion-nav id="nav" #content [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/Users/anthonyjordan/Dev/SpaceR/src/app/app.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
+        __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* Platform */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]) === "function" && _d || Object])
     ], MyApp);
     return MyApp;
+    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=app.component.js.map
