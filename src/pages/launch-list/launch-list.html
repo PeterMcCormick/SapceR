@@ -18,7 +18,16 @@
 
 <ion-content padding>
 
-  <ion-card>
+  <ion-card *ngFor="let launch of testArray" padding-vertical="10">
+    <div padding-vertical="3">
+    <b>Rocket:</b> {{launch.rocket}}
+    <br>
+    <b>Payload:</b> {{launch.payload}}
+    <br padding-vertical="2">
+    {{launch.date}}
+    <br padding-vertical="2">
+    {{launch.location}}
+    </div>
 
   </ion-card>
 </ion-content>

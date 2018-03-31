@@ -25694,3 +25694,7 @@ page-home ion-title {
 page-launch-list ion-title {
   text-align: center;
 }
+
+page-launch-list ion-card {
+  text-align: center;
+}
