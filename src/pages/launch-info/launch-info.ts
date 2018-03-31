@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {LaunchItem} from "../launch-list/launch-list";
+import {InAppBrowser} from "@ionic-native/in-app-browser";
 
 /**
  * Generated class for the LaunchInfoPage page.
@@ -17,13 +18,13 @@ import {LaunchItem} from "../launch-list/launch-list";
 export class LaunchInfoPage {
   launchItem: LaunchItem;
 
-  constructor(public navCtrl: NavController, public navParams : NavParams,) {
+  constructor(public navCtrl: NavController, public navParams : NavParams, private inAppBrowser: InAppBrowser) {
     this.launchItem = navParams.data;
 
   }
 
   openWikiPage(page){
-    this.navCtrl.push(page);
+    this.inAppBrowser.create(page);
 
   }
 

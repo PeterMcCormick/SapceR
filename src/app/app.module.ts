@@ -8,6 +8,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import {LaunchListPage} from "../pages/launch-list/launch-list";
 import {LaunchInfoPage} from "../pages/launch-info/launch-info";
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import {LaunchInfoPage} from "../pages/launch-info/launch-info";
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    InAppBrowser
   ]
 })
 export class AppModule {}

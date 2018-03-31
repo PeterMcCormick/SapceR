@@ -15,9 +15,18 @@
 
 <ion-content padding>
   <div>
-    <ion-buttons (click)="openWikiPage(launchItem.rocketWebpage)">
+    <button (click)="openWikiPage(launchItem.rocketWebpage)">
     <b>Rocket:</b> {{launchItem.rocket}}
-  </ion-buttons>
+  </button>
+    <br>
+    <button (click)="openWikiPage(launchItem.payloadWebPage)">
+      <b>Payload:</b> {{launchItem.payload}}
+    </button>
+    <br>
+    {{launchItem.date}}
+    <br>
+    {{launchItem.location}}
+    <br><br>
     {{launchItem.description}}
   </div>
 </ion-content>
