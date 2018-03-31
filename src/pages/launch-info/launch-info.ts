@@ -17,8 +17,14 @@ import {LaunchItem} from "../launch-list/launch-list";
 export class LaunchInfoPage {
   launchItem: LaunchItem;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, launchItem: LaunchItem) {
-    this.launchItem = launchItem;
+  constructor(public navCtrl: NavController, public navParams : NavParams,) {
+    this.launchItem = navParams.data;
+
+  }
+
+  openWikiPage(page){
+    this.navCtrl.push(page);
+
   }
 
 

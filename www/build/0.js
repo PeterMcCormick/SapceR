@@ -24,10 +24,10 @@ var LaunchListPageModule = /** @class */ (function () {
     LaunchListPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__launch_list__["b" /* LaunchListPage */],
+                __WEBPACK_IMPORTED_MODULE_2__launch_list__["a" /* LaunchListPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__launch_list__["b" /* LaunchListPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__launch_list__["a" /* LaunchListPage */]),
             ],
         })
     ], LaunchListPageModule);
