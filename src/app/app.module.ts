@@ -9,13 +9,17 @@ import { HomePage } from '../pages/home/home';
 import {LaunchListPage} from "../pages/launch-list/launch-list";
 import {LaunchInfoPage} from "../pages/launch-info/launch-info";
 import { InAppBrowser } from '@ionic-native/in-app-browser';
+import { IssPage} from "../pages/iss/iss";
 
+import { GoogleMapComponent } from '../components/google-map/google-map';
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     LaunchListPage,
-    LaunchInfoPage
+    LaunchInfoPage,
+    GoogleMapComponent,
+    IssPage
   ],
   imports: [
     BrowserModule,
@@ -26,7 +30,8 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
     MyApp,
     HomePage,
     LaunchListPage,
-    LaunchInfoPage
+    LaunchInfoPage,
+    IssPage
   ],
   providers: [
     StatusBar,
