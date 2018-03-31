@@ -1,14 +1,31 @@
 <ion-header>
   <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-title>
-      Ionic Blank
+      Picture of the Day
     </ion-title>
   </ion-navbar>
 </ion-header>
+<ion-content>
+  <!-- Add if blocks for actual picture of the day when it is created -->
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <img src={{defaultImage.location}}>
+
+  <div padding>
+    <p>
+      <b>
+        {{defaultImage.title}}
+      </b>
+    </p>
+    <p>
+      {{defaultImage.explanation}}
+    </p>
+    <p>
+      <b>Copyright</b> <br>
+      {{defaultImage.copyright}}
+    </p>
+  </div>
 </ion-content>
+
