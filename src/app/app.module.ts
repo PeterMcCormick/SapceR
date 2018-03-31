@@ -7,6 +7,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { IssPage} from "../pages/iss/iss";
+import { PeoplePage} from "../pages/people/people";
 
 import { GoogleMapComponent } from '../components/google-map/google-map';
 @NgModule({
@@ -14,7 +15,8 @@ import { GoogleMapComponent } from '../components/google-map/google-map';
     MyApp,
     HomePage,
     GoogleMapComponent,
-    IssPage
+    IssPage,
+    PeoplePage
   ],
   imports: [
     BrowserModule,
@@ -24,7 +26,8 @@ import { GoogleMapComponent } from '../components/google-map/google-map';
   entryComponents: [
     MyApp,
     HomePage,
-    IssPage
+    IssPage,
+    PeoplePage
   ],
   providers: [
     StatusBar,
