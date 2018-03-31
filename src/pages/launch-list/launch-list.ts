@@ -29,7 +29,7 @@ export class LaunchListPage {
 
 }
 
-class LaunchItem{
+export class LaunchItem{
 
   constructor(private _rocket: string, private _payload: string, private _date: string, private _location: string,
               private _description: string){
