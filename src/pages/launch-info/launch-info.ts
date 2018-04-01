@@ -20,13 +20,11 @@ export class LaunchInfoPage {
 
   constructor(public navCtrl: NavController, public navParams : NavParams, private inAppBrowser: InAppBrowser) {
     this.launchItem = navParams.data;
-
   }
 
   openWikiPage(page){
     this.inAppBrowser.create(page);
 
   }
-
 
 }
