@@ -1,0 +1,35 @@
+<!--
+  Generated template for the LaunchInfoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Launch Info</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <google-map [latitude] ="launchItem.padLatitude" [longitude] = "launchItem.padLongitude">
+
+  </google-map>
+  <div>
+    <button (click)="openWikiPage(launchItem.rocketWebpage)">
+    <b>Rocket:</b> {{launchItem.rocket}}
+  </button>
+    <br>
+    <button (click)="openWikiPage(launchItem.payloadWebPage)">
+      <b>Payload:</b> {{launchItem.payload}}
+    </button>
+    <br>
+    {{launchItem.date}}
+    <br>
+    {{launchItem.location}}
+    <br><br>
+    {{launchItem.description}}
+  </div>
+</ion-content>

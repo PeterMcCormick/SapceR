@@ -6,6 +6,9 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import {LaunchListPage} from "../pages/launch-list/launch-list";
+import {LaunchInfoPage} from "../pages/launch-info/launch-info";
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { IssPage} from "../pages/iss/iss";
 import { PeoplePage} from "../pages/people/people";
 
@@ -14,6 +17,8 @@ import { GoogleMapComponent } from '../components/google-map/google-map';
   declarations: [
     MyApp,
     HomePage,
+    LaunchListPage,
+    LaunchInfoPage,
     GoogleMapComponent,
     IssPage,
     PeoplePage
@@ -27,12 +32,16 @@ import { GoogleMapComponent } from '../components/google-map/google-map';
     MyApp,
     HomePage,
     IssPage,
-    PeoplePage
+    PeoplePage,
+    LaunchListPage,
+    LaunchInfoPage,
+    IssPage,
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    InAppBrowser
   ]
 })
 export class AppModule {}

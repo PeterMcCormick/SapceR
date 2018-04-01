@@ -1,0 +1,33 @@
+<!--
+  Generated template for the LaunchListPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Launch List</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-card *ngFor="let launch of testArray" padding-vertical="10" (click)="openPage(launch)">
+    <div padding-vertical="3">
+      <b>Rocket:</b> {{launch.rocket}}
+      <br>
+      <b>Payload:</b> {{launch.payload}}
+      <br padding-vertical="2">
+      {{launch.date}}
+      <br padding-vertical="2">
+      {{launch.location}}
+    </div>
+
+  </ion-card>
+</ion-content>

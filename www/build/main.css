@@ -25694,3 +25694,15 @@ page-home ion-content {
 page-home ion-title {
   text-align: center;
 }
+
+page-launch-info ion-content {
+  text-align: center;
+}
+
+page-launch-list ion-title {
+  text-align: center;
+}
+
+page-launch-list ion-card {
+  text-align: center;
+}
