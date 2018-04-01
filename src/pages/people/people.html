@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>People in Space</ion-title>
+    <ion-title> <ion-icon name="people"></ion-icon> &nbsp; People in Space &nbsp; <ion-icon name="planet"></ion-icon> </ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -16,12 +16,6 @@
 <ion-content padding>
 
     <ion-card>
-      <ion-card-header>
-        <ion-icon name="people" item-start></ion-icon>
-        &nbsp; &nbsp; Nauts in Space &nbsp; &nbsp;
-        <ion-icon name="planet" item-start></ion-icon>
-      </ion-card-header>
-
       <ion-list>
         <button *ngFor="let person of people" ion-item padding>
 
@@ -32,4 +26,4 @@
       </ion-list>
     </ion-card>
 </ion-content>
-*ngFor="let page of pages" ion-item (click)="openPage(page)"
+
