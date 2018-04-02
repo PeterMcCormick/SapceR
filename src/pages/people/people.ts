@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { InAppBrowser } from "@ionic-native/in-app-browser";
 
 /**
  * Generated class for the PeoplePage page.
@@ -14,22 +15,29 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'people.html',
 })
 export class PeoplePage {
+  numOfPeople: number;
+  people: Array<{name: string, spaceCraft: string, wikiPage: string}>;
 
-  people: Array<{name: string, component: any}>;
+  constructor(public navCtrl: NavController, public navParams: NavParams, private inAppBrowser: InAppBrowser) {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.people = [
-      {name: "James Harden", component: ""},
-      {name: "Pavel Bure", component: ""},
-      {name: "Johann Leichler", component: ""},
-      {name: "Hishamoto Orinzato", component: ""},
-      {name: "Sir Elton John", component: ""},
-      {name: "John Armstrong", component: ""}
+      {name: "Anton Shkaplerov", spaceCraft: "ISS", wikiPage: "https://en.wikipedia.org/wiki/Anton_Shkaplerov"},
+      {name: "Scott Tingle", spaceCraft: "ISS", wikiPage: "https://en.wikipedia.org/wiki/Scott_D._Tingle"},
+      {name: "Norishige Kanai", spaceCraft: "ISS", wikiPage: "https://en.wikipedia.org/wiki/Norishige_Kanai"},
+      {name: "Oleg Artemyev", spaceCraft: "ISS", wikiPage: "https://en.wikipedia.org/wiki/Oleg_Artemyev"},
+      {name: "Andrew Feustel", spaceCraft: "ISS", wikiPage: "https://en.wikipedia.org/wiki/Andrew_J._Feustel"},
+      {name: "Richard Arnold", spaceCraft: "ISS", wikiPage: "https://en.wikipedia.org/wiki/Richard_R._Arnold"}
     ];
+    this.numOfPeople = this.people.length;
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PeoplePage');
+  }
+
+  openWikiPage(page){
+    this.inAppBrowser.create(page);
+
   }
 
 }

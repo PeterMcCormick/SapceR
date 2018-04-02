@@ -7,6 +7,9 @@
 <ion-header>
 
   <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-title>People in Space</ion-title>
   </ion-navbar>
 
@@ -17,15 +20,17 @@
 
     <ion-card>
       <ion-card-header>
+        ( {{ numOfPeople }} ) &nbsp;
         <ion-icon name="people" item-start></ion-icon>
-        &nbsp; &nbsp; Nauts in Space &nbsp; &nbsp;
+        &nbsp; Nauts in Space &nbsp;
         <ion-icon name="planet" item-start></ion-icon>
+
       </ion-card-header>
 
       <ion-list>
-        <button *ngFor="let person of people" ion-item padding>
+        <button *ngFor="let person of people" ion-item padding (click)="openWikiPage(person.wikiPage)">
 
-          <ion-icon name="person" item-start></ion-icon>
+          <ion-icon name="person" item-start ></ion-icon>
           {{person.name}}
         </button>
 

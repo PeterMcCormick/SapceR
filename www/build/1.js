@@ -1,25 +1,14 @@
 webpackJsonp([1],{
 
-<<<<<<< HEAD
-/***/ 273:
-=======
-/***/ 275:
->>>>>>> LaunchList
+/***/ 276:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-<<<<<<< HEAD
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "IssPageModule", function() { return IssPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LaunchListPageModule", function() { return LaunchListPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__iss__ = __webpack_require__(99);
-=======
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LaunchInfoPageModule", function() { return LaunchInfoPageModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__launch_info__ = __webpack_require__(101);
->>>>>>> LaunchList
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__launch_list__ = __webpack_require__(102);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -29,43 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-<<<<<<< HEAD
-var IssPageModule = /** @class */ (function () {
-    function IssPageModule() {
+var LaunchListPageModule = /** @class */ (function () {
+    function LaunchListPageModule() {
     }
-    IssPageModule = __decorate([
+    LaunchListPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__iss__["a" /* IssPage */],
+                __WEBPACK_IMPORTED_MODULE_2__launch_list__["a" /* LaunchListPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__iss__["a" /* IssPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__launch_list__["a" /* LaunchListPage */]),
             ],
         })
-    ], IssPageModule);
-    return IssPageModule;
+    ], LaunchListPageModule);
+    return LaunchListPageModule;
 }());
 
-//# sourceMappingURL=iss.module.js.map
-=======
-var LaunchInfoPageModule = /** @class */ (function () {
-    function LaunchInfoPageModule() {
-    }
-    LaunchInfoPageModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
-            declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__launch_info__["a" /* LaunchInfoPage */],
-            ],
-            imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__launch_info__["a" /* LaunchInfoPage */]),
-            ],
-        })
-    ], LaunchInfoPageModule);
-    return LaunchInfoPageModule;
-}());
-
-//# sourceMappingURL=launch-info.module.js.map
->>>>>>> LaunchList
+//# sourceMappingURL=launch-list.module.js.map
 
 /***/ })
 
