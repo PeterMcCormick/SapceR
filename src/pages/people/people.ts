@@ -14,6 +14,7 @@ import { InAppBrowser } from "@ionic-native/in-app-browser";
   selector: 'page-people',
   templateUrl: 'people.html',
 })
+
 export class PeoplePage {
   numOfPeople: number;
   people: Array<{name: string, spaceCraft: string, wikiPage: string}>;
