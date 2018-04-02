@@ -13,7 +13,7 @@ import { IssPage} from "../pages/iss/iss";
 import { PeoplePage} from "../pages/people/people";
 
 import { GoogleMapComponent } from '../components/google-map/google-map';
-import { RestServiceProvider } from '../providers/rest-service/rest-service';
+import { RestServiceProvider } from '../rest-service/rest-service';
 @NgModule({
   declarations: [
     MyApp,
