@@ -8,5 +8,8 @@
   },
   "exclude": [
     "test.ts",
+    "typings/browser.d.ts",
+    "typings/browser",
+    "node_modules"
   ]
 }
