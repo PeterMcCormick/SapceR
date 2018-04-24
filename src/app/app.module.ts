@@ -13,6 +13,7 @@ import { IssPage} from "../pages/iss/iss";
 import { PeoplePage} from "../pages/people/people";
 
 import { GoogleMapComponent } from '../components/google-map/google-map';
+import { RestServiceProvider } from '../rest-service/rest-service';
 @NgModule({
   declarations: [
     MyApp,
@@ -41,7 +42,8 @@ import { GoogleMapComponent } from '../components/google-map/google-map';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    InAppBrowser
+    InAppBrowser,
+    RestServiceProvider
   ]
 })
 export class AppModule {}
