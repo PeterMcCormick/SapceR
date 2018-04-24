@@ -14,6 +14,7 @@ import { PeoplePage} from "../pages/people/people";
 
 import { GoogleMapComponent } from '../components/google-map/google-map';
 import { RestServiceProvider } from '../rest-service/rest-service';
+import {IonicStorageModule} from "@ionic/storage";
 @NgModule({
   declarations: [
     MyApp,
@@ -26,7 +27,8 @@ import { RestServiceProvider } from '../rest-service/rest-service';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -35,15 +37,15 @@ import { RestServiceProvider } from '../rest-service/rest-service';
     IssPage,
     PeoplePage,
     LaunchListPage,
-    LaunchInfoPage,
-    IssPage,
+    LaunchInfoPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     InAppBrowser,
-    RestServiceProvider
+    RestServiceProvider,
+    Storage
   ]
 })
 export class AppModule {}

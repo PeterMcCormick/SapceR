@@ -28,12 +28,11 @@
       <div>
       <ion-list>
 
-        <button *ngFor="let person of people" ion-item padding (click)="openWikiPage(person.wikiPage)">
+        <button *ngFor="let person of peopleFromStorage" ion-item padding (click)="openWikiPage(person.wikiPage)">
 
           <ion-icon name="person" item-start ></ion-icon>
           {{person.name}}
         </button>
-
       </ion-list>
      </div>
     </ion-card>

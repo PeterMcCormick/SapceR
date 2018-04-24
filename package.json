@@ -10,7 +10,7 @@
     "lint": "ionic-app-scripts lint",
     "ionic:build": "ionic-app-scripts build",
     "ionic:serve": "ionic-app-scripts serve",
-    "test": "jasmine-ts \"path/to/specs/**/*.spec.ts\""
+    "test": "ng test"
   },
   "dependencies": {
     "@angular/animations": "5.2.9",
@@ -29,39 +29,48 @@
     "@ionic-native/status-bar": "4.6.0",
     "@ionic/storage": "2.1.3",
     "@types/google-maps": "^3.2.0",
+    "cordova-android": "7.0.0",
+    "cordova-ios": "4.5.4",
+    "cordova-plugin-device": "^2.0.1",
     "cordova-plugin-googlemaps": "^2.2.9",
+    "cordova-plugin-ionic-webview": "^1.1.16",
     "cordova-plugin-inappbrowser": "^2.0.2",
+    "cordova-plugin-whitelist": "^1.3.3",
+    "cordova-sqlite-storage": "^2.3.1",
     "ionic-angular": "3.9.2",
     "ionicons": "3.0.0",
-    "jasmine": "^3.1.0",
-    "jasmine-core": "~2.8.0",
-    "jasmine-spec-reporter": "~4.2.1",
-    "karma": "~2.0.0",
-    "karma-chrome-launcher": "~2.2.0",
-    "karma-coverage-istanbul-reporter": "^1.2.1",
-    "karma-jasmine": "~1.1.0",
-    "karma-jasmine-html-reporter": "^0.2.2",
+    "jdk": "0.0.0",
+    "localforage": "^1.7.1",
+    "node.js": "0.0.0",
     "requirejs": "^2.3.5",
     "rxjs": "5.5.8",
     "sw-toolbox": "3.6.0",
-    "zone.js": "0.8.20"
+    "xcode": "^1.0.0",
+    "zone": "^0.3.4",
+    "zone.js": "^0.8.24"
   },
   "devDependencies": {
+    "@angular/cli": "^1.7.3",
     "@ionic/app-scripts": "3.1.8",
-    "@angular/language-service": "^5.2.0",
-    "@types/jasmine": "^2.8.6",
-    "@types/jasminewd2": "~2.0.2",
-    "@types/node": "~6.0.60",
-    "babel-cli": "^6.26.0",
-    "babel-preset-es2015": "^6.24.1",
-    "jasmine-ts": "^0.2.1",
+    "@types/node": "^9.6.1",
+    "angular-cli": "^1.0.0-beta.28.3",
+    "codecov": "^3.0.0",
+    "ts-node": "^5.0.1",
+    "tslint": "^5.9.1",
+    "tslint-eslint-rules": "^5.1.0",
     "typescript": "~2.6.2"
   },
   "description": "An Ionic project",
   "cordova": {
     "plugins": {
+      "cordova-plugin-device": {},
       "cordova-plugin-inappbrowser": {},
-      "cordova-plugin-googlemaps": {}
-    }
+      "cordova-plugin-googlemaps": {},
+      "cordova-sqlite-storage": {}
+    },
+    "platforms": [
+      "android",
+      "ios"
+    ]
   }
 }
