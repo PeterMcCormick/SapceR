@@ -15,6 +15,8 @@ import { PeoplePage} from "../pages/people/people";
 import { GoogleMapComponent } from '../components/google-map/google-map';
 import { RestServiceProvider } from '../rest-service/rest-service';
 import {IonicStorageModule} from "@ionic/storage";
+import {HttpClientModule} from "@angular/common/http";
+
 @NgModule({
   declarations: [
     MyApp,
@@ -28,7 +30,8 @@ import {IonicStorageModule} from "@ionic/storage";
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

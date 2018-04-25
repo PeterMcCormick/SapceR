@@ -8,6 +8,7 @@ import { HomePage } from '../pages/home/home';
 import { LaunchListPage} from "../pages/launch-list/launch-list";
 import { IssPage} from "../pages/iss/iss";
 import {PeoplePage} from "../pages/people/people";
+import {RestServiceProvider} from "../rest-service/rest-service";
 
 @Component({
   templateUrl: 'app.html'
@@ -17,7 +18,9 @@ export class MyApp {
   rootPage:any = HomePage;
   pages: Array<{title: string, component: any}>;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private storage: Storage) {
+  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private storage: Storage,
+              private apiCaller: RestServiceProvider) {
+
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
@@ -31,17 +34,9 @@ export class MyApp {
         {title: "People in Space", component: PeoplePage},
       ];
 
+      let people = this.apiCaller.get("people_in_space");
+      this.storage.set('people', people);
     });
-    var people = [
-      {name: "Anton Shkaplerov", spaceCraft: "ISS", wikiPage: "https://en.wikipedia.org/wiki/Anton_Shkaplerov"},
-      {name: "Scott Tingle", spaceCraft: "ISS", wikiPage: "https://en.wikipedia.org/wiki/Scott_D._Tingle"},
-      {name: "Norishige Kanai", spaceCraft: "ISS", wikiPage: "https://en.wikipedia.org/wiki/Norishige_Kanai"},
-      {name: "Oleg Artemyev", spaceCraft: "ISS", wikiPage: "https://en.wikipedia.org/wiki/Oleg_Artemyev"},
-      {name: "Andrew Feustel", spaceCraft: "ISS", wikiPage: "https://en.wikipedia.org/wiki/Andrew_J._Feustel"},
-      {name: "Richard Arnold", spaceCraft: "ISS", wikiPage: "https://en.wikipedia.org/wiki/Richard_R._Arnold"}
-    ];
-
-    this.storage.set('people', people);
   }
 
   openPage(page){
