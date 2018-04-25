@@ -1,5 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import {HttpClient} from "@angular/common/http";
 
 /*
   Generated class for the RestServiceProvider provider.
@@ -10,14 +10,16 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class RestServiceProvider {
 
-  http: HttpClient;
-  url;
-  constructor(url: string) {
-    this.url = url;
+  url: string = "http://localhost:8080/";
+  data;
+
+
+  constructor(public http: HttpClient) {
 
   }
 
-  get(){
-    return this.http.get(this.url);
+  async get(domain: string){
+    await this.http.get(this.url + domain).toPromise().then(data => this.data = data);
+    return this.data;
   }
 }

@@ -21,20 +21,9 @@ export class PeoplePage {
   people: Array<{name: string, spaceCraft: string, wikiPage: string}>;
   peopleFromStorage: Array<{name: string, spaceCraft: string, wikiPage: string}>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private inAppBrowser: InAppBrowser, private storage: Storage) {
+  constructor(private inAppBrowser: InAppBrowser, private storage: Storage) {
 
-    // this.people = [
-    //   {name: "Anton Shkaplerov", spaceCraft: "ISS", wikiPage: "https://en.wikipedia.org/wiki/Anton_Shkaplerov"},
-    //   {name: "Scott Tingle", spaceCraft: "ISS", wikiPage: "https://en.wikipedia.org/wiki/Scott_D._Tingle"},
-    //   {name: "Norishige Kanai", spaceCraft: "ISS", wikiPage: "https://en.wikipedia.org/wiki/Norishige_Kanai"},
-    //   {name: "Oleg Artemyev", spaceCraft: "ISS", wikiPage: "https://en.wikipedia.org/wiki/Oleg_Artemyev"},
-    //   {name: "Andrew Feustel", spaceCraft: "ISS", wikiPage: "https://en.wikipedia.org/wiki/Andrew_J._Feustel"},
-    //   {name: "Richard Arnold", spaceCraft: "ISS", wikiPage: "https://en.wikipedia.org/wiki/Richard_R._Arnold"}
-    // ];
-    // this.numOfPeople = this.people.length;
-    // this.storage.set('people', this.people);
     this.getFromStorage('people');
-
 
   }
 
@@ -42,9 +31,9 @@ export class PeoplePage {
     this.inAppBrowser.create(page);
 
   }
-  async getFromStorage(key: string):Array{
+  async getFromStorage(key: string){
     await this.storage.get(key).then((data) => this.peopleFromStorage = data);
-
+    this.numOfPeople = this.peopleFromStorage.length;
   }
 
 }
