@@ -8,23 +8,23 @@
     </ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content>
+<ion-content *ngFor="let picture of pictureFromStorage">
   <!-- Add if blocks for actual picture of the day when it is created -->
 
-  <img src={{defaultImage.location}}>
+  <img src={{picture.hdurl}}>
 
   <div padding>
     <p>
       <b>
-        {{defaultImage.title}}
+        {{picture.title}}
       </b>
     </p>
     <p>
-      {{defaultImage.explanation}}
+      {{picture.explanation}}
     </p>
     <p>
       <b>Copyright</b> <br>
-      {{defaultImage.copyright}}
+      {{picture.copyright}}
     </p>
   </div>
 </ion-content>

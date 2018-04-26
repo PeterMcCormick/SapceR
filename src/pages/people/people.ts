@@ -19,7 +19,7 @@ import { InAppBrowser } from "@ionic-native/in-app-browser";
 export class PeoplePage {
   numOfPeople: number;
   people: Array<{name: string, spaceCraft: string, wikiPage: string}>;
-  peopleFromStorage: Array<{name: string, spaceCraft: string, wikiPage: string}>;
+  peopleFromStorage;
 
   constructor(private inAppBrowser: InAppBrowser, private storage: Storage) {
 
