@@ -34,7 +34,9 @@ export class MyApp {
         {title: "People in Space", component: PeoplePage},
       ];
 
+      let picture = this.apiCaller.get("nasa_pic_of_day");
       let people = this.apiCaller.get("people_in_space");
+      this.storage.set('picture', picture);
       this.storage.set('people', people);
     });
   }
