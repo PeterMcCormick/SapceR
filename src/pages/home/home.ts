@@ -26,7 +26,6 @@ export class HomePage {
   // Add local storage for image
   async getFromStorage(key: string){
     await this.storage.get(key).then((data) => this.pictureFromStorage = data);
-    console.log(this.pictureFromStorage[0].hdurl)
   }
 
 }

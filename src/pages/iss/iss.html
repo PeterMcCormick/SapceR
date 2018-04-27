@@ -16,9 +16,9 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding *ngFor= "let iss of location">
 
-  <google-map [latitude]="28.4803" [longitude]="-80.5421">
+  <google-map [latitude]="iss.latitude" [longitude]="iss.longitude">
 
   </google-map>
 
@@ -27,14 +27,14 @@
 
       <ion-icon name="locate" item-start large ></ion-icon>
       <h2>Relative Location</h2>
-      <p>Latitude: 28.4803</p>
-      <p>Longitude: -80.5421</p>
+      <p>Latitude: {{iss.latitude}}}</p>
+      <p>Longitude: {{iss.longitude}}</p>
     </ion-item>
 
     <ion-item>
       <ion-icon name="clock" item-left large ></ion-icon>
       <h2>Time of Last Ping</h2>
-      <p>12:37 PM est</p>
+      <p>{{date.getUTCHours()}}:{{date.getUTCMinutes()}}  UTC</p>
     </ion-item>
 
 

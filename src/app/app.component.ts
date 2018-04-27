@@ -17,6 +17,9 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
   rootPage:any = HomePage;
   pages: Array<{title: string, component: any}>;
+  issLocationTimer;
+  timerForISSCall = window.setInterval((data) => this.issLocationTimer = this.apiCaller.get("iss_location"), 60000);
+  timerForISSStorage= setInterval((data) => data = this.storage.set('issLocation', this.issLocationTimer),60000);
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private storage: Storage,
               private apiCaller: RestServiceProvider) {
@@ -34,8 +37,10 @@ export class MyApp {
         {title: "People in Space", component: PeoplePage},
       ];
 
+      let issLocation = this.apiCaller.get("iss_location");
       let picture = this.apiCaller.get("nasa_pic_of_day");
       let people = this.apiCaller.get("people_in_space");
+      this.storage.set('issLocation', issLocation);
       this.storage.set('picture', picture);
       this.storage.set('people', people);
     });

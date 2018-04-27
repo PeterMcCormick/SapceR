@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { IonicPage } from 'ionic-angular';
+import {Storage} from "@ionic/storage";
 
 
 /**
@@ -18,13 +18,19 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class IssPage {
 
+  location: Array<{timestamp: number, latitude: string, longitude: string}>;
+  date: Date;
+  timer = window.setInterval((data) => data = this.getFromStorage('issLocation'), 60000);
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private storage: Storage) {
+
+    this.getFromStorage("issLocation");
 
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad IssPage');
+  async getFromStorage(key: string){
+    await this.storage.get(key).then((data) => this.location = data);
+    this.date = new Date(this.location[0].timestamp * 1000);
   }
 
 }
