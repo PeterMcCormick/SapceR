@@ -34,34 +34,41 @@ $app-direction: ltr;
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #488aff,
-  secondary:  #32db64,
-  danger:     #f53d3d,
+  primary:    #A06CD5,
+  secondary:  #6247AA,
+  tertiary: #fe2ade,
+  danger:     #D90368,
+  robin:      #72E1D1,
   light:      #f4f4f4,
   dark:       #222
 );
 
+$toolbar-background: map-get($colors, primary);
 
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here
 
-
+$card-ios-text-color: map-get($colors, danger);
+$card-ios-header-color: map-get($colors, robin);
+$list-ios-text-color: map-get($colors, primary);
 
 
 // App Material Design Variables
 // --------------------------------------------------
 // Material Design only Sass variables can go here
 
-
-
+$card-md-text-color: map-get($colors, danger);
+$card-md-header-color: map-get($colors, robin);
+$list-md-text-color: map-get($colors, primary);
 
 // App Windows Variables
 // --------------------------------------------------
 // Windows only Sass variables can go here
 
-
-
+$card-wp-text-color: map-get($colors, danger);
+$card-wp-header-color: map-get($colors, robin);
+$list-wp-text-color: map-get($colors, primary);
 
 // App Theme
 // --------------------------------------------------
@@ -70,7 +77,7 @@ $colors: (
 // so that the above variables are used and Ionic's
 // default are overridden.
 
-@import "ionic.theme.default";
+@import "ionic.theme.dark";
 
 
 // Ionicons
@@ -86,3 +93,4 @@ $colors: (
 
 @import "roboto";
 @import "noto-sans";
+

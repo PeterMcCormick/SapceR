@@ -23,18 +23,18 @@
   </google-map>
 
   <ion-card>
-    <ion-item>
 
+    <ion-item>
       <ion-icon name="locate" item-start large ></ion-icon>
       <h2>Relative Location</h2>
-      <p>Latitude: {{iss.latitude}}}</p>
-      <p>Longitude: {{iss.longitude}}</p>
+      <p ion-text color ="primary">Latitude: {{iss.latitude}}</p>
+      <p ion-text color="primary">Longitude: {{iss.longitude}}</p>
     </ion-item>
 
     <ion-item>
       <ion-icon name="clock" item-left large ></ion-icon>
       <h2>Time of Last Ping</h2>
-      <p>{{date.getUTCHours()}}:{{date.getUTCMinutes()}}  UTC</p>
+      <p ion-text color="primary">{{date.getUTCHours()}}:{{date.getUTCMinutes()}}  UTC</p>
     </ion-item>
 
 
