@@ -18,14 +18,13 @@
 
   </google-map>
   <div>
-    <button (click)="openWikiPage(launchItem.rocketWebpage)">
+    <button (click)="openWikiPage(launchItem.rocketWebpage)" ion-button color="danger" ion-button small>
     <b>Rocket:</b> {{launchItem.rocket}}
   </button>
-    <br>
-    <button (click)="openWikiPage(launchItem.payloadWebPage)">
+    <button (click)="openWikiPage(launchItem.payloadWebPage)" ion-button color="danger" ion-button small>
       <b>Payload:</b> {{launchItem.payload}}
     </button>
-    <br>
+    <br><br>
     {{launchItem.date}}
     <br>
     {{launchItem.location}}
