@@ -6,7 +6,7 @@ webpackJsonp([5],{
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ionic_storage__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ionic_storage__ = __webpack_require__(40);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -69,7 +69,6 @@ var HomePage = /** @class */ (function () {
                     case 0: return [4 /*yield*/, this.storage.get(key).then(function (data) { return _this.pictureFromStorage = data; })];
                     case 1:
                         _a.sent();
-                        console.log(this.pictureFromStorage[0].hdurl);
                         return [2 /*return*/];
                 }
             });
@@ -77,7 +76,7 @@ var HomePage = /** @class */ (function () {
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"/Users/petermccormick/SpaceR/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>\n      Picture of the Day\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content *ngFor="let picture of pictureFromStorage">\n  <!-- Add if blocks for actual picture of the day when it is created -->\n\n  <img src={{picture.hdurl}}>\n\n  <div padding>\n    <p>\n      <b>\n        {{picture.title}}\n      </b>\n    </p>\n    <p>\n      {{picture.explanation}}\n    </p>\n    <p>\n      <b>Copyright</b> <br>\n      {{picture.copyright}}\n    </p>\n  </div>\n</ion-content>\n\n'/*ion-inline-end:"/Users/petermccormick/SpaceR/src/pages/home/home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"/Users/anthonyjordan/Dev/SpaceR/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>\n      Picture of the Day\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content *ngFor="let picture of pictureFromStorage">\n  <!-- Add if blocks for actual picture of the day when it is created -->\n\n  <img src={{picture.hdurl}}>\n\n  <div padding>\n    <p>\n      <b>\n        {{picture.title}}\n      </b>\n    </p>\n    <p>\n      {{picture.explanation}}\n    </p>\n    <p>\n      <b>Copyright</b> <br>\n      {{picture.copyright}}\n    </p>\n  </div>\n</ion-content>\n\n'/*ion-inline-end:"/Users/anthonyjordan/Dev/SpaceR/src/pages/home/home.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__ionic_storage__["b" /* Storage */]])
     ], HomePage);
@@ -139,7 +138,7 @@ var Picture = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return IssPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ionic_storage__ = __webpack_require__(40);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -148,6 +147,41 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [0, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
 };
 
 
@@ -158,18 +192,31 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var IssPage = /** @class */ (function () {
-    function IssPage(navCtrl, navParams) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
+    function IssPage(storage) {
+        var _this = this;
+        this.storage = storage;
+        this.timer = window.setInterval(function (data) { return data = _this.getFromStorage('issLocation'); }, 60000);
+        this.getFromStorage("issLocation");
     }
-    IssPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad IssPage');
+    IssPage.prototype.getFromStorage = function (key) {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.storage.get(key).then(function (data) { return _this.location = data; })];
+                    case 1:
+                        _a.sent();
+                        this.date = new Date(this.location[0].timestamp * 1000);
+                        return [2 /*return*/];
+                }
+            });
+        });
     };
     IssPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-iss',template:/*ion-inline-start:"/Users/petermccormick/SpaceR/src/pages/iss/iss.html"*/'<!--\n  Generated template for the IssPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>ISS Relative Locator</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n  <google-map [latitude]="28.4803" [longitude]="-80.5421">\n\n  </google-map>\n\n  <ion-card>\n\n    <ion-item>\n      <ion-icon name="locate" item-start large ></ion-icon>\n      <h2>Relative Location</h2>\n      <p ion-text color ="primary">Latitude: 28.4803</p>\n      <p ion-text color="primary">Longitude: -80.5421</p>\n    </ion-item>\n\n    <ion-item>\n      <ion-icon name="clock" item-left large ></ion-icon>\n      <h2>Time of Last Ping</h2>\n      <p ion-text color="primary">12:37 PM est</p>\n    </ion-item>\n\n\n  </ion-card>\n</ion-content>\n'/*ion-inline-end:"/Users/petermccormick/SpaceR/src/pages/iss/iss.html"*/,
+            selector: 'page-iss',template:/*ion-inline-start:"/Users/anthonyjordan/Dev/SpaceR/src/pages/iss/iss.html"*/'<!--\n  Generated template for the IssPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>ISS Relative Locator</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding *ngFor= "let iss of location">\n\n  <google-map [latitude]="iss.latitude" [longitude]="iss.longitude">\n\n  </google-map>\n\n  <ion-card>\n\n    <ion-item>\n      <ion-icon name="locate" item-start large ></ion-icon>\n      <h2>Relative Location</h2>\n      <p ion-text color ="primary">Latitude: {{iss.latitude}}</p>\n      <p ion-text color="primary">Longitude: {{iss.longitude}}</p>\n    </ion-item>\n\n    <ion-item>\n      <ion-icon name="clock" item-left large ></ion-icon>\n      <h2>Time of Last Ping</h2>\n      <p ion-text color="primary">{{date.getUTCHours()}}:{{date.getUTCMinutes()}}  UTC</p>\n    </ion-item>\n\n\n  </ion-card>\n</ion-content>\n'/*ion-inline-end:"/Users/anthonyjordan/Dev/SpaceR/src/pages/iss/iss.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__ionic_storage__["b" /* Storage */]])
     ], IssPage);
     return IssPage;
 }());
@@ -182,11 +229,60 @@ var IssPage = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LaunchInfoPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_in_app_browser__ = __webpack_require__(79);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+/**
+ * Generated class for the LaunchInfoPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var LaunchInfoPage = /** @class */ (function () {
+    function LaunchInfoPage(navCtrl, navParams, inAppBrowser) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.inAppBrowser = inAppBrowser;
+        this.launchItem = navParams.data;
+    }
+    LaunchInfoPage.prototype.openWikiPage = function (page) {
+        this.inAppBrowser.create(page);
+    };
+    LaunchInfoPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-launch-info',template:/*ion-inline-start:"/Users/anthonyjordan/Dev/SpaceR/src/pages/launch-info/launch-info.html"*/'<!--\n  Generated template for the LaunchInfoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Launch Info</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <google-map [latitude] ="launchItem.padLatitude" [longitude] = "launchItem.padLongitude">\n\n  </google-map>\n  <div>\n    <button (click)="openWikiPage(launchItem.rocketWebpage)" ion-button color="danger" ion-button small>\n    <b>Rocket:</b> {{launchItem.rocket}}\n  </button>\n    <button (click)="openWikiPage(launchItem.payloadWebPage)" ion-button color="danger" ion-button small>\n      <b>Payload:</b> {{launchItem.payload}}\n    </button>\n    <br><br>\n    {{launchItem.date}}\n    <br>\n    {{launchItem.location}}\n    <br><br>\n    {{launchItem.description}}\n  </div>\n</ion-content>\n'/*ion-inline-end:"/Users/anthonyjordan/Dev/SpaceR/src/pages/launch-info/launch-info.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_in_app_browser__["a" /* InAppBrowser */]])
+    ], LaunchInfoPage);
+    return LaunchInfoPage;
+}());
+
+//# sourceMappingURL=launch-info.js.map
+
+/***/ }),
+
+/***/ 106:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LaunchListPage; });
 /* unused harmony export LaunchItem */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__launch_info_launch_info__ = __webpack_require__(106);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__launch_info_launch_info__ = __webpack_require__(105);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -218,7 +314,7 @@ var LaunchListPage = /** @class */ (function () {
     };
     LaunchListPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-launch-list',template:/*ion-inline-start:"/Users/petermccormick/SpaceR/src/pages/launch-list/launch-list.html"*/'<!--\n  Generated template for the LaunchListPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Launch List</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n  <ion-card  *ngFor="let launch of testArray" padding-vertical="10" (click)="openPage(launch)">\n    <div padding-vertical="3">\n      <b ion-text color ="primary">Rocket:</b> {{launch.rocket}}\n      <br>\n      <b ion-text color ="primary">Payload:</b> {{launch.payload}}\n      <br padding-vertical="2">\n      {{launch.date}}\n      <br padding-vertical="2">\n      {{launch.location}}\n    </div>\n\n\n  </ion-card>\n</ion-content>\n'/*ion-inline-end:"/Users/petermccormick/SpaceR/src/pages/launch-list/launch-list.html"*/,
+            selector: 'page-launch-list',template:/*ion-inline-start:"/Users/anthonyjordan/Dev/SpaceR/src/pages/launch-list/launch-list.html"*/'<!--\n  Generated template for the LaunchListPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Launch List</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n  <ion-card  *ngFor="let launch of testArray" padding-vertical="10" (click)="openPage(launch)">\n    <div padding-vertical="3">\n      <b ion-text color ="primary">Rocket:</b> {{launch.rocket}}\n      <br>\n      <b ion-text color ="primary">Payload:</b> {{launch.payload}}\n      <br padding-vertical="2">\n      {{launch.date}}\n      <br padding-vertical="2">\n      {{launch.location}}\n    </div>\n\n\n  </ion-card>\n</ion-content>\n'/*ion-inline-end:"/Users/anthonyjordan/Dev/SpaceR/src/pages/launch-list/launch-list.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]])
     ], LaunchListPage);
@@ -307,62 +403,13 @@ var LaunchItem = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 106:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LaunchInfoPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_in_app_browser__ = __webpack_require__(79);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-/**
- * Generated class for the LaunchInfoPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var LaunchInfoPage = /** @class */ (function () {
-    function LaunchInfoPage(navCtrl, navParams, inAppBrowser) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.inAppBrowser = inAppBrowser;
-        this.launchItem = navParams.data;
-    }
-    LaunchInfoPage.prototype.openWikiPage = function (page) {
-        this.inAppBrowser.create(page);
-    };
-    LaunchInfoPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-launch-info',template:/*ion-inline-start:"/Users/petermccormick/SpaceR/src/pages/launch-info/launch-info.html"*/'<!--\n  Generated template for the LaunchInfoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Launch Info</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <google-map [latitude] ="launchItem.padLatitude" [longitude] = "launchItem.padLongitude">\n\n  </google-map>\n  <div>\n    <button (click)="openWikiPage(launchItem.rocketWebpage)" ion-button color="danger" ion-button small>\n    <b>Rocket:</b> {{launchItem.rocket}}\n  </button>\n    <button (click)="openWikiPage(launchItem.payloadWebPage)" ion-button color="danger" ion-button small>\n      <b>Payload:</b> {{launchItem.payload}}\n    </button>\n    <br><br>\n    {{launchItem.date}}\n    <br>\n    {{launchItem.location}}\n    <br><br>\n    {{launchItem.description}}\n  </div>\n</ion-content>\n'/*ion-inline-end:"/Users/petermccormick/SpaceR/src/pages/launch-info/launch-info.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_in_app_browser__["a" /* InAppBrowser */]])
-    ], LaunchInfoPage);
-    return LaunchInfoPage;
-}());
-
-//# sourceMappingURL=launch-info.js.map
-
-/***/ }),
-
 /***/ 107:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PeoplePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ionic_storage__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ionic_storage__ = __webpack_require__(40);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_in_app_browser__ = __webpack_require__(79);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -442,7 +489,7 @@ var PeoplePage = /** @class */ (function () {
     };
     PeoplePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-people',template:/*ion-inline-start:"/Users/petermccormick/SpaceR/src/pages/people/people.html"*/'<!--\n  Generated template for the PeoplePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>People in Space</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n    <ion-card>\n      <ion-card-header>\n        ( {{ numOfPeople }} ) &nbsp;\n        <ion-icon name="people" item-start></ion-icon>\n        &nbsp; Nauts in Space &nbsp;\n        <ion-icon name="planet" item-start></ion-icon>\n      </ion-card-header>\n      <div>\n      <ion-list>\n\n        <button *ngFor="let person of peopleFromStorage" ion-item padding (click)="openWikiPage(person.wikiPage)">\n\n          <ion-icon name="person" item-start ></ion-icon>\n          {{person.name}}\n        </button>\n      </ion-list>\n     </div>\n    </ion-card>\n</ion-content>\n\n'/*ion-inline-end:"/Users/petermccormick/SpaceR/src/pages/people/people.html"*/,
+            selector: 'page-people',template:/*ion-inline-start:"/Users/anthonyjordan/Dev/SpaceR/src/pages/people/people.html"*/'<!--\n  Generated template for the PeoplePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>People in Space</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n    <ion-card>\n      <ion-card-header>\n        ( {{ numOfPeople }} ) &nbsp;\n        <ion-icon name="people" item-start></ion-icon>\n        &nbsp; Nauts in Space &nbsp;\n        <ion-icon name="planet" item-start></ion-icon>\n      </ion-card-header>\n      <div>\n      <ion-list>\n\n        <button *ngFor="let person of peopleFromStorage" ion-item padding (click)="openWikiPage(person.wikiPage)">\n\n          <ion-icon name="person" item-start ></ion-icon>\n          {{person.name}}\n        </button>\n      </ion-list>\n     </div>\n    </ion-card>\n</ion-content>\n\n'/*ion-inline-end:"/Users/anthonyjordan/Dev/SpaceR/src/pages/people/people.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__ionic_native_in_app_browser__["a" /* InAppBrowser */], __WEBPACK_IMPORTED_MODULE_1__ionic_storage__["b" /* Storage */]])
     ], PeoplePage);
@@ -483,11 +530,11 @@ var map = {
 		3
 	],
 	"../pages/launch-info/launch-info.module": [
-		289,
+		288,
 		2
 	],
 	"../pages/launch-list/launch-list.module": [
-		288,
+		289,
 		1
 	],
 	"../pages/people/people.module": [
@@ -620,19 +667,19 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(41);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(201);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(202);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(279);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_home_home__ = __webpack_require__(103);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_launch_list_launch_list__ = __webpack_require__(105);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_launch_info_launch_info__ = __webpack_require__(106);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_launch_list_launch_list__ = __webpack_require__(106);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_launch_info_launch_info__ = __webpack_require__(105);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_in_app_browser__ = __webpack_require__(79);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_iss_iss__ = __webpack_require__(104);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_people_people__ = __webpack_require__(107);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_google_map_google_map__ = __webpack_require__(285);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__rest_service_rest_service__ = __webpack_require__(203);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__ionic_storage__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__ionic_storage__ = __webpack_require__(40);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__angular_common_http__ = __webpack_require__(204);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -676,8 +723,8 @@ var AppModule = /** @class */ (function () {
                     links: [
                         { loadChildren: '../pages/home/home.module#HomePageModule', name: 'HomePage', segment: 'home', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/iss/iss.module#IssPageModule', name: 'IssPage', segment: 'iss', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/launch-list/launch-list.module#LaunchListPageModule', name: 'LaunchListPage', segment: 'launch-list', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/launch-info/launch-info.module#LaunchInfoPageModule', name: 'LaunchInfoPage', segment: 'launch-info', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/launch-list/launch-list.module#LaunchListPageModule', name: 'LaunchListPage', segment: 'launch-list', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/people/people.module#PeoplePageModule', name: 'PeoplePage', segment: 'people', priority: 'low', defaultHistory: [] }
                     ]
                 }),
@@ -716,12 +763,12 @@ var AppModule = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(41);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(202);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(201);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_storage__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_storage__ = __webpack_require__(40);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_home_home__ = __webpack_require__(103);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_launch_list_launch_list__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_launch_list_launch_list__ = __webpack_require__(106);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_iss_iss__ = __webpack_require__(104);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_people_people__ = __webpack_require__(107);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__rest_service_rest_service__ = __webpack_require__(203);
@@ -750,6 +797,8 @@ var MyApp = /** @class */ (function () {
         this.storage = storage;
         this.apiCaller = apiCaller;
         this.rootPage = __WEBPACK_IMPORTED_MODULE_5__pages_home_home__["a" /* HomePage */];
+        this.timerForISSCall = window.setInterval(function (data) { return _this.issLocationTimer = _this.apiCaller.get("iss_location"); }, 60000);
+        this.timerForISSStorage = setInterval(function (data) { return data = _this.storage.set('issLocation', _this.issLocationTimer); }, 60000);
         platform.ready().then(function () {
             // Okay, so the platform is ready and our plugins are available.
             // Here you can do any higher level native things you might need.
@@ -761,8 +810,10 @@ var MyApp = /** @class */ (function () {
                 { title: "ISS Location", component: __WEBPACK_IMPORTED_MODULE_7__pages_iss_iss__["a" /* IssPage */] },
                 { title: "People in Space", component: __WEBPACK_IMPORTED_MODULE_8__pages_people_people__["a" /* PeoplePage */] },
             ];
+            var issLocation = _this.apiCaller.get("iss_location");
             var picture = _this.apiCaller.get("nasa_pic_of_day");
             var people = _this.apiCaller.get("people_in_space");
+            _this.storage.set('issLocation', issLocation);
             _this.storage.set('picture', picture);
             _this.storage.set('people', people);
         });
@@ -775,7 +826,7 @@ var MyApp = /** @class */ (function () {
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* Nav */])
     ], MyApp.prototype, "nav", void 0);
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/petermccormick/SpaceR/src/app/app.html"*/'<ion-menu [content]="content">\n  <ion-header>\n    <ion-toolbar>\n      <ion-title>Menu</ion-title>\n    </ion-toolbar>\n  </ion-header>\n  <ion-content>\n    <ion-list>\n      <button menuClose *ngFor="let page of pages" ion-item (click)="openPage(page)">\n        {{page.title}}\n      </button>\n    </ion-list>\n  </ion-content>\n</ion-menu>\n\n<ion-nav id="nav" #content [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/Users/petermccormick/SpaceR/src/app/app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/anthonyjordan/Dev/SpaceR/src/app/app.html"*/'<ion-menu [content]="content">\n  <ion-header>\n    <ion-toolbar>\n      <ion-title>Menu</ion-title>\n    </ion-toolbar>\n  </ion-header>\n  <ion-content>\n    <ion-list>\n      <button menuClose *ngFor="let page of pages" ion-item (click)="openPage(page)">\n        {{page.title}}\n      </button>\n    </ion-list>\n  </ion-content>\n</ion-menu>\n\n<ion-nav id="nav" #content [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/Users/anthonyjordan/Dev/SpaceR/src/app/app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */], __WEBPACK_IMPORTED_MODULE_4__ionic_storage__["b" /* Storage */],
             __WEBPACK_IMPORTED_MODULE_9__rest_service_rest_service__["a" /* RestServiceProvider */]])
@@ -836,7 +887,7 @@ var GoogleMapComponent = /** @class */ (function () {
     ], GoogleMapComponent.prototype, "longitude", void 0);
     GoogleMapComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'google-map',template:/*ion-inline-start:"/Users/petermccormick/SpaceR/src/components/google-map/google-map.html"*/'<div #map id="map"></div>\n'/*ion-inline-end:"/Users/petermccormick/SpaceR/src/components/google-map/google-map.html"*/
+            selector: 'google-map',template:/*ion-inline-start:"/Users/anthonyjordan/Dev/SpaceR/src/components/google-map/google-map.html"*/'<div #map id="map"></div>\n'/*ion-inline-end:"/Users/anthonyjordan/Dev/SpaceR/src/components/google-map/google-map.html"*/
         }),
         __metadata("design:paramtypes", [])
     ], GoogleMapComponent);
