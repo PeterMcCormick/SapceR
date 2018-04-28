@@ -40,9 +40,11 @@ export class MyApp {
       let issLocation = this.apiCaller.get("iss_location");
       let picture = this.apiCaller.get("nasa_pic_of_day");
       let people = this.apiCaller.get("people_in_space");
+      let launches = this.apiCaller.get("rocket_launch")
       this.storage.set('issLocation', issLocation);
       this.storage.set('picture', picture);
       this.storage.set('people', people);
+      this.storage.set('launches', launches);
     });
   }
 
